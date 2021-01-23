@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Cars shop</string>
+    <string name="login_welcome">Hello there, welcome back!</string>
+</resources>

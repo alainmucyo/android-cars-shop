@@ -1,5 +1,7 @@
 package com.example.learndesign;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +12,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Login extends AppCompatActivity {
-    Button registerHere, submitBtn;
+public class Register extends AppCompatActivity {
+    Button loginLink, submitBtn;
     TextView logoText, subTitle;
     ImageView logoImage;
     TextInputLayout usernameInput, passwordInput;
@@ -24,20 +24,19 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
-        registerHere = findViewById(R.id.register_link);
-
+        loginLink = findViewById(R.id.login_link);
         logoText = findViewById(R.id.logo_title);
         logoImage = findViewById(R.id.logo_image);
         subTitle = findViewById(R.id.logo_slogan);
         submitBtn = findViewById(R.id.submit_button);
         usernameInput = findViewById(R.id.username);
         passwordInput = findViewById(R.id.password);
-        registerHere.setOnClickListener(new View.OnClickListener() {
+        loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Register.class);
+                Intent intent = new Intent(Register.this, Login.class);
                 Pair[] pairs = new Pair[7];
                 pairs[0] = new Pair<View, String>(subTitle, "sub_title");
                 pairs[1] = new Pair<View, String>(logoText, "logo_text");
@@ -45,10 +44,9 @@ public class Login extends AppCompatActivity {
                 pairs[3] = new Pair<View, String>(submitBtn, "go_button");
                 pairs[4] = new Pair<View, String>(usernameInput, "username");
                 pairs[5] = new Pair<View, String>(passwordInput, "password");
-                pairs[6] = new Pair<View, String>(registerHere, "back_url");
-
+                pairs[6] = new Pair<View, String>(loginLink, "back_url");
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Register.this, pairs);
                     startActivity(intent, options.toBundle());
                 } else {
                     startActivity(intent);

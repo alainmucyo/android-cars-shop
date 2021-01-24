@@ -6,32 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="231dp"
-        android:layout_height="105dp"
+        android:layout_height="71dp"
         android:layout_marginTop="5dp"
-        android:transitionName="logo_image"
-        android:src="@drawable/logo_car" />
+        android:src="@drawable/logo_car"
+        android:transitionName="logo_image" />
 
     <TextView
         android:id="@+id/logo_title"
         android:layout_width="wrap_content"
-        android:layout_height="89dp"
+        android:layout_height="54dp"
         android:fontFamily="@font/bungee"
-        android:transitionName="logo_text"
-        android:text="@string/login_welcome"
-        android:textSize="33sp" />
+        android:text="Welcome"
+        android:textSize="33sp"
+        android:transitionName="logo_text" />
 
     <TextView
         android:id="@+id/logo_slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in to continue"
-        android:textColor="@color/black"
+        android:text="Register to get started"
         android:transitionName="sub_title"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -39,7 +39,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
+
         >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            android:hint="Full names">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            android:hint="E-mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username"
@@ -48,8 +79,8 @@
             android:layout_height="wrap_content"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black"
-            app:counterTextColor="@color/black"
             android:transitionName="input_username"
+            android:layout_marginTop="8dp"
             android:hint="Username">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -62,7 +93,7 @@
             android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
             android:hint="Password"
             app:passwordToggleEnabled="true"
@@ -89,15 +120,14 @@
             android:transitionName="go_button"
             app:backgroundTint="@color/black" />
         <Button
-            android:id="@+id/register_link"
+            android:id="@+id/login_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
-            android:text="New user, signup!"
+            android:text="Already registered? Login here!"
             android:textColor="@color/black"
             android:layout_gravity="right"
             android:elevation="0dp"
-            android:layout_margin="5dp"
             android:transitionName="back_url"
             />
 

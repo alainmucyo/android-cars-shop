@@ -10,21 +10,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/logo_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_car" />
+            android:src="@drawable/logo_car"
+            android:transitionName="logo_image"
+            android:layout_marginBottom="50dp"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/logo_text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="71dp"
             android:fontFamily="@font/bungee"
             android:text="CARS SHOP"
-            android:textSize="40dp"/>
+            android:transitionName="logo_text"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/logo_slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:text="Buy the car of your dreams" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
